@@ -11,7 +11,10 @@
 \definecolor[darkyellow][y=.625] % a CMYK color
 \definecolor[darkred][r=.625] % a RGB color
 \definecolor[darkgray] [s=.925] % a gray scale
-
+\setuptyping[color=darkgreen]
+\setuptype[color=darkmagenta, style=bold]
+\setupexternalfigures
+  [location=default]
 
 \starttext
 
@@ -25,12 +28,12 @@
   Lizardo Reyna\\
   farliz@disroot.org
 
-\vfill
+ \vfill
 
     
     {\externalfigure [by-sa][width=3cm]}\\
-    {\em Approved for free cultural works}
-
+    {\em Approved for free cultural works}\\
+  
  % \startuseMPgraphic{color demo}
 
 %      path p ; p := fullcircle xscaled 10cm yscaled 2cm ;
@@ -92,33 +95,38 @@
 % \stopMPpage
 
 
-\title{---The Basics}
+\chapter{---The Basics}
 
 \blank[3cm]
 
+\placecontent
 
+\blank[2cm]
 
-\subject{What is ConTeXt?}
+\section{What is ConTeXt?}
 
-\CONTEXT~is a typesetting system developed in 1992 by Hans Hagen from
-PRAGMA-ADEin Hasselt, The Netherlands. Is an advanced macro package for
-creating professional quality documents in pdf, html and xml
-formats. The traditional word processors such as Writer, Abword, or MS
-word may be limited with large and complex documents. This means that
-we need to type many text, mathematical and chemical formulas,
-inserting figures and create tables. \CONTEXT~ is a professional
-typesetting software with many commands that will help you make your
-papers look like a high quality scientific journal. This will increase
-your motivation and creativity in the writing process.
+\CONTEXT~is a typesetting system developed in 1992 by Hans Hagen from PRAGMA-ADE
+in Hasselt, The Netherlands. Is an advanced macro package for creating
+professional quality documents in pdf, html and, xml formats. The traditional
+word processors such as Writer, Abword, or MS word, may be limited with large and
+complex documents and when we need to type many text, mathematical and chemical
+formulas, insert figures and create complex tables. \CONTEXT~ is a professional
+typesetting software with many commands that will help you make your papers look
+like a high quality scientific journal. This will increase your motivation and
+creativity in the writing process.
+\blank[big]
+\CONTEXT~official site:
+\blank[big]
+  \goto{\tfb https://wiki.contextgarden.net}[url(https://wiki.contextgarden.net)]
 
-\subject{How \CONTEXT~works?}
+\section{How \CONTEXT~works?}
 
-Think \CONTEXT~as an programming language, this means that you need to
+Think in \CONTEXT~as a programming language, this means that you need to
 write a source code and then compile the source to get a pdf file.
 The file containing the source code must to be named with {\tt .tex}
 extension. An useful habit is to create an independent directory for
 each document; into this directory or folder the {\tt .tex} file have
-to be saved. To avoid potential errors the name of the file must not
+to be saved. To avoid potential conflicts the name of the file must not
 contain spaces or special characters such as \#, \&,
 etc. Underscore can be used to separate words in the file names (e.g. {\tt soil_paper.tex}).
 
@@ -159,11 +167,11 @@ TeXworks editor is recommended for beginners and can be downloaded from
 the official page
 \goto{https://www.tug.org/texworks/}[url(https://www.tug.org/texworks/)].
 
-\subject{Try online}
+\section{Try online}
 
-Before install \CONTEXT~and TexWorks and use in you own machine,
+Before install \CONTEXT~and TexWorks and use it in you own machine,
 you can follow this guide in the online version in a web browser. Copy
-the following link and paste in your web browser,
+the following link and paste it in your web browser,
 \goto{https://live.contextgarden.net}[url(https://live.contextgarden.net)]. In
 \in{Fig.}[fig:f1] the online version is showed. You can click the
 typeset button and the pdf will be created with Hello World! text.
@@ -177,12 +185,12 @@ typeset button and the pdf will be created with Hello World! text.
 
 
    \startframedtext[width=\textwidth]
-     The examples presented in this chapter (The Basics) can be copied
+     The examples presented in this chapter (green text) can be copied
      and paste into the textbox in the online version of \CONTEXT.
  \stopframedtext
 
            
-\subject{The commands}
+\section{The commands}
 
 The commands have {\em arguments} and {\em options}, although some commands can
 be use without arguments and options. The first pair of commands you
@@ -205,8 +213,8 @@ of the document.
 
 \stoptyping
              
-Now we can write a paragraph. In the source file the we do not care
-about formatting the paragraph, the optimal length of the lines in the
+Now we can write a paragraph. The format of the text in the source code does not
+matter, however for optimal readability, the optimal length of the lines in the
 source file is about 70 characters per line.
 
 \starttyping
@@ -251,7 +259,7 @@ paragraphs because of the space between them.
 
 \stoptyping
 
-\subsubject{Sample text}
+\subsection{Sample text}
 
 \CONTEXT~come with text for training, we can use these paragraphs with
 the command \type{\input} following to the name of the file (internal
@@ -301,7 +309,7 @@ The following files names are possible.
 We now use the command \type{\blank} to separate two paragraphs with a
 white space.
 
-\subject{Document structure}
+\section{Document structure}
 
 The typical structure of an article is conformed by the following sections:
 
@@ -380,7 +388,7 @@ Two cases are possible; numbered sections and no numbered sections. In
  other section. These tabs are only for orgnizing the source code and have not
  influence on the pdf.
 
- \subject{Font sizes and styles}
+ \section{Font sizes and styles}
 
  The font size and style commans must to be used inside curly brackets. The
  commands are showed in Tables \in[tab:t2] and \in[tab:t3].
@@ -392,7 +400,9 @@ Two cases are possible; numbered sections and no numbered sections. In
 { \bTABLE[frame=off, width=5cm]
 
  \bTR\bTD {\bf Command} \eTD  \bTD {\bf effect} \eTD\eTR
-\bTR\bTD \type{{\tfa texto}} \eTD  \bTD {\tfa texto} \eTD\eTR
+ \bTR\bTD \type{{\tfxx texto}} \eTD  \bTD {\tfxx texto} \eTD\eTR
+ \bTR\bTD \type{{\tfx texto}} \eTD  \bTD {\tfx texto} \eTD\eTR
+ \bTR\bTD \type{{\tfa texto}} \eTD  \bTD {\tfa texto} \eTD\eTR
 \bTR\bTD \type{{\tfb texto}} \eTD  \bTD {\tfb texto} \eTD\eTR
 \bTR\bTD \type{{\tfc texto}} \eTD  \bTD {\tfc texto} \eTD\eTR
 \bTR\bTD \type{{\tfd texto}} \eTD  \bTD {\tfd texto} \eTD\eTR
@@ -429,7 +439,7 @@ Two cases are possible; numbered sections and no numbered sections. In
            }
 
 
-\page
+
 
            \starttyping
    \starttext
@@ -441,7 +451,7 @@ Two cases are possible; numbered sections and no numbered sections. In
  \stoptyping
 
 
- \subject{Lists}
+ \section{Lists}
 
  The command for creating a list is:
 
@@ -451,7 +461,7 @@ Two cases are possible; numbered sections and no numbered sections. In
    \stopitemize
  \stoptyping
 
- In between we use the command \type{\item} following the text of the list, every
+Use the command \type{\item} following the text of the list to create a item, every
  \type{\item} represents one element of the list. The elements can be a simple
  word, line, paragraph or image, see the example.
 
@@ -471,7 +481,7 @@ Two cases are possible; numbered sections and no numbered sections. In
 
  Now let's use the options for this command. The options must be written
  in brackets at the end of \type{\start...}. In the following example, we
- tell to \CONTEXT~to put numbers instead of bullets in the list, in
+ tell to \CONTEXT~to put numbers instead of symbols in beginning of the list. In
  addition, the option {\it packed} reduce the space between lines.
 
   \starttyping
@@ -534,12 +544,12 @@ If there are to many elements to list, we can divide into columns as follow.
 
  There are several symbols that can be use in a list. You can change
  the \type{[n]} (numeration) for any of the following alternatives:
- \type{a, A, r, R, 1, 2, 3}. Try and see the result.
+ \type{a, A, r, R, 1, 2, 3}. Try and see the results.
 
 
- \subject{Sub/superscript}
+ \section{Sub/superscript}
 
- The command \type{\low{}} and \type{\high{}} are use text as sub or
+ The command \type{\low{}} and \type{\high{}} put the text as sub or
  superscript form. See the examples.
 
  \starttyping
@@ -550,7 +560,7 @@ The H\low{2}O is the water formula. The area is 80 m\high{2}.
  \stoptext
  \stoptyping
 
- \subject{Equations}
+ \section{Equations}
 
  Inline math symbols are written between two \$ \$. \CONTEXT~will print the
  math symbols with an adequate font.
@@ -559,7 +569,7 @@ The H\low{2}O is the water formula. The area is 80 m\high{2}.
   \starttyping
  \starttext
 
-Resolve the following equation $y = a + b - c$
+Solve the following equation $y = a + b - c$
  
  \stoptext
  \stoptyping
@@ -571,7 +581,7 @@ equation in an new line and centered.
  \starttyping
  \starttext
 
- Resolve the following equation
+ Solve the following equation
 
    \startformula
      y = a + b - c
@@ -584,10 +594,57 @@ equation in an new line and centered.
  the \$ symbol.
 
 
- \subject{Figures}
+ \section{Figures}
 
  To insert a figure we will use the command \type{\externalfigure
-   [][width=]}.  In the first pair of brackets you will write the name
+   [ ][width=]}.  In the first pair of brackets you will write the name
  of the image without extension. If the image is in the same folder
- there is not needed write the entire path. 
+ there is not needed write the entire path.
+
+ 
+ ConTeXt supports the image formats listed below. The image format is determined from the file extension (case insensitive).
+ 
+\startitemize[packed]
+
+\item PDF: File extension .pdf
+\item MPS (MetaPost output): File extension .mps or .<digits>
+\item JPEG: File extension .jpg or .jpeg
+\item PNG: File extension .png
+\item JPEG 2000: File extension .jp2
+\item JBIG or JBIG2: File extension .jbig, .jbig2, or .jb2
+
+\stopitemize
+
+\starttyping
+  \starttext
+
+  This is an inline figure \externalfigure [cow][width=2cm], more text here.
+ 
+  \stoptext
+\stoptyping
+
+Captions are important to describe the figure, the command \type{\placefigure}
+can use captions and labels. See carefully the brackets types.
+
+\starttyping
+  \starttext
+
+  This is an figure with captions and label.
+
+  \placefigure[]
+              [fig:f1]
+              {This is the caption space. A cow}
+              {\externalfigure [cow][width=9cm]}
+
+More text can be write here.
+              
+  \stoptext
+\stoptyping
+
+In the previous example, the first pair of square brackets is for location, let
+it empty to led \CONTEXT put it automatically. The second square brackets is for
+label, this label will be use latter for cross-reference. The first pair of
+curly brackets is for captions, and the second one is for the command.
+
 \stoptext
+
