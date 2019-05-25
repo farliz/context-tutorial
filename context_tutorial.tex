@@ -1,0 +1,593 @@
+\usemodule[chart]
+\setupFLOWcharts[height=2\lineheight, width=3cm]
+\setupinteraction[state=start, color=darkblue, contrastcolor=]
+\setupindenting[yes, medium]
+\setupcaptions[table][location=top, width=.8\textwidth]
+\setupcolors[state=start]
+
+\definecolor[mamu][r=.9, g=0, b=.9 ]
+\definecolor[mamu1][r=.3, g=.3, b=.3]
+
+\definecolor[darkyellow][y=.625] % a CMYK color
+\definecolor[darkred][r=.625] % a RGB color
+\definecolor[darkgray] [s=.925] % a gray scale
+
+
+\starttext
+
+
+\startstandardmakeup[rigth]
+
+  {\bfb Learn \CONTEXT~for scientific writing:\\ ---The hard way}
+\blank[big]
+  by
+
+  Lizardo Reyna\\
+  farliz@disroot.org
+
+\vfill
+
+    
+    {\externalfigure [by-sa][width=3cm]}\\
+    {\em Approved for free cultural works}
+
+ % \startuseMPgraphic{color demo}
+
+%      path p ; p := fullcircle xscaled 10cm yscaled 2cm ;
+%      fill p withcolor \MPcolor{mamu} ;
+     
+%      for i=0 step 2 until 20 :
+%         draw (0,i) withcolor \MPcolor{darkgrey} ;
+%         endfor ;
+
+%         numeric done[][], i, j, n ; n := 0 ;
+% forever :
+% i := round(uniformdeviate(10)) ; j := round(uniformdeviate(2)) ;
+% if unknown done[i][j] :
+% drawdot (i*cm,j*cm) ; n := n + 1 ; done[i][j] := n ;
+% fi ;
+% exitif n = 10 ;
+% endfor ;
+%\stopuseMPgraphic
+%\useMPgraphic{color demo}
+  
+\stopstandardmakeup
+
+
+% \startMPpage
+
+%   StartPage ;
+
+%   pickup pencircle scaled 2mm ;
+ 
+% %        fill Page enlarged 2mm withcolor \MPcolor{mamu} ;
+        
+      
+% for i=1 upto 3000:
+%      v := uniformdeviate(300) + 1 ;
+%      h := uniformdeviate(v) / 900 * normaldeviate ;
+%      l := uniformdeviate(900) ;
+%      drawdot ((-l,0)--(l,0)) rotated uniformdeviate(180) shifted (h,-v)  
+%      withcolor darkgray ;
+%      endfor
+     
+%         picture p, q, t;
+%         p := textext("Learn \CONTEXT~for scientific writing:")  xsized 16cm ;
+%         t := textext("---The Basics")  xsized 7cm ;
+%         q := textext("Lizardo Reyna") xsized 4cm ;
+%        % r := textext("Lizardo Reyna") xsized 6cm ;
+        
+%         draw anchored.rt (p, center rightboundary Page shifted (-3cm,   4cm)) ;
+%         draw anchored.rt (t, center rightboundary Page shifted (-12cm,  2cm)) ;
+%         draw anchored.rt(q, center rightboundary Page shifted ( -2cm, -12cm)) ; % \MPcolor{darkred} ;
+
+
+%         draw
+% unitsquare shifted (3,.8) xscaled 5cm yscaled 2cm
+% withpen pencircle scaled 3.0mm withcolor .625yellow ;
+     
+%     StopPage ;
+%     % draw externalfigure "utm_logo.png" scaled 4cm  shifted (1cm,25cm);
+
+% \stopMPpage
+
+
+\title{---The Basics}
+
+\blank[3cm]
+
+
+
+\subject{What is ConTeXt?}
+
+\CONTEXT~is a typesetting system developed in 1992 by Hans Hagen from
+PRAGMA-ADEin Hasselt, The Netherlands. Is an advanced macro package for
+creating professional quality documents in pdf, html and xml
+formats. The traditional word processors such as Writer, Abword, or MS
+word may be limited with large and complex documents. This means that
+we need to type many text, mathematical and chemical formulas,
+inserting figures and create tables. \CONTEXT~ is a professional
+typesetting software with many commands that will help you make your
+papers look like a high quality scientific journal. This will increase
+your motivation and creativity in the writing process.
+
+\subject{How \CONTEXT~works?}
+
+Think \CONTEXT~as an programming language, this means that you need to
+write a source code and then compile the source to get a pdf file.
+The file containing the source code must to be named with {\tt .tex}
+extension. An useful habit is to create an independent directory for
+each document; into this directory or folder the {\tt .tex} file have
+to be saved. To avoid potential errors the name of the file must not
+contain spaces or special characters such as \#, \&,
+etc. Underscore can be used to separate words in the file names (e.g. {\tt soil_paper.tex}).
+
+
+
+\startFLOWchart[c1]
+
+ 
+  \startFLOWcell
+    \name {file}
+    \location {1,1}
+    \text {soil_paper.tex}
+    \connection [rl] {ctx}
+  \stopFLOWcell
+   \startFLOWcell
+    \name {ctx}
+    \location {2,1}
+    \text {ConTeXt}
+    \connection [rl] {pdf}
+    \comment[t]{Compile}
+  \stopFLOWcell
+   \startFLOWcell
+    \name {pdf}
+    \location {3,1}
+    \text {PDF}
+    %\connection [rl] {file}
+  \stopFLOWcell
+
+
+\stopFLOWchart
+
+\FLOWchart[c1]
+
+\CONTEXT~works with commands which are words preceded by a backslash
+(\backslash) The {\tt soil_paper.tex} is the file where the commands
+will be written and you can use any text editor. However the
+TeXworks editor is recommended for beginners and can be downloaded from
+the official page
+\goto{https://www.tug.org/texworks/}[url(https://www.tug.org/texworks/)].
+
+\subject{Try online}
+
+Before install \CONTEXT~and TexWorks and use in you own machine,
+you can follow this guide in the online version in a web browser. Copy
+the following link and paste in your web browser,
+\goto{https://live.contextgarden.net}[url(https://live.contextgarden.net)]. In
+\in{Fig.}[fig:f1] the online version is showed. You can click the
+typeset button and the pdf will be created with Hello World! text.
+
+
+
+\placefigure[]
+            [fig:f1] {\CONTEXT~online version.}
+            {\externalfigure [onlinec][width=\textwidth]}
+
+
+
+   \startframedtext[width=\textwidth]
+     The examples presented in this chapter (The Basics) can be copied
+     and paste into the textbox in the online version of \CONTEXT.
+ \stopframedtext
+
+           
+\subject{The commands}
+
+The commands have {\em arguments} and {\em options}, although some commands can
+be use without arguments and options. The first pair of commands you
+need to learn is \type{\starttext \stoptext}. Between these commands
+we will write all the content of our document. As is showed in
+\in{Fig.}[fig:f1] the sentence Hello world! is between the commands.
+
+All text outside the commands will not appear in the document. The
+form \type{\start ... \stop} indicate the beginning and the end of
+the commands. In our first document we will write these commands with
+some blank spaces between them to avoid confusion with the main text
+of the document.
+
+\starttyping
+  \starttext
+
+  ....
+  
+  \stoptext
+
+\stoptyping
+             
+Now we can write a paragraph. In the source file the we do not care
+about formatting the paragraph, the optimal length of the lines in the
+source file is about 70 characters per line.
+
+\starttyping
+  \starttext
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec
+  hendrerit tempor tellus.  Donec pretium posuere tellus. 
+  nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis
+  natoque penatibus et magnis dis parturient montes, nascetur
+  ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tris
+  diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum. 
+  vestibulum accumsan nisl.
+  \stoptext
+
+\stoptyping
+
+Let's try with two paragraphs. \CONTEXT~knows that there are two
+paragraphs because of the space between them.
+
+
+\starttyping
+  \starttext
+  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec
+  hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam
+  nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis
+  natoque penatibus et magnis dis parturient montes, nascetur
+  ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique
+  diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam
+  vestibulum accumsan nisl.
+
+  Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi
+  nec facilisis facilisis, est dui fermentum leo, quis tempor ligula
+  erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis
+  sed pede.  Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec
+  adipiscing interdum, lacus tellus malesuada massa, quis varius mi
+  purus non odio.  Pellentesque condimentum, magna ut suscipit
+  hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet
+  urna.  Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero
+  non molestie mollis, magna orci ultrices dolor, at vulputate neque
+  nulla lacinia eros.  Sed id ligula quis est convallis tempor.
+  Curabitur lacinia pulvinar nibh.  Nam a sapien.
+  \stoptext
+
+\stoptyping
+
+\subsubject{Sample text}
+
+\CONTEXT~come with text for training, we can use these paragraphs with
+the command \type{\input} following to the name of the file (internal
+file). We can use the command several times.
+
+The following files names are possible.
+
+\startitemize[packed, columns, three]
+         
+\item knuth        
+\item tufte        
+\item reich        
+\item materie      
+\item douglas      
+\item dawkins      
+\item ward         
+\item zapf         
+\item bryson       
+\item davis        
+\item thuan        
+\item hawking      
+\item linden       
+\item weisman      
+\item montgomery   
+\item carrol       
+\item schwarzenegger
+\item carey        
+\item waltham      
+\item sapolsky     
+\item mcnish       
+\item klein        
+\item greenfield   
+\item poe 
+\stopitemize
+
+\starttyping
+  \starttext
+
+  \input davis
+   \blank
+  \input knuth
+  
+  \stoptext
+
+\stoptyping
+
+We now use the command \type{\blank} to separate two paragraphs with a
+white space.
+
+\subject{Document structure}
+
+The typical structure of an article is conformed by the following sections:
+
+\startitemize[packed]
+\item Title
+\item Abstract
+\item Introduction
+\item Methods
+\item Results
+\item Discussion
+\item Conclusions   
+\stopitemize
+
+The references section was intentionally omitted, it will be explained latter.
+
+Two cases are possible; numbered sections and no numbered sections. In
+\in{Tab.}[tab:t1] the commands for creating sections are listed.
+
+
+
+\placetable[]
+           [tab:t1]
+           {Commands for document structure. Inside the curly brackets the title of the section must be written}
+           {
+\bTABLE[frame=off]
+\bTR\bTD[style=\bf] Numbered \eTD \bTD[style=\bf] No numbered \eTD  \eTR
+\bTR\bTD \type{\chapter{}} \eTD \bTD \type{\title{}} \eTD  \eTR
+\bTR\bTD \type{\section{}} \eTD \bTD \type{\subject{}} \eTD  \eTR
+\bTR\bTD \type{\subsection{}} \eTD \bTD \type{\subsubject{}} \eTD  \eTR
+\bTR\bTD \type{\subsubsection{}} \eTD \bTD \type{\subsubsubject{}} \eTD  \eTR
+\eTABLE
+           }
+
+
+ Now we can define the structure of the document as follow.
+
+ \starttyping
+   \starttext
+   
+   \chapter{Title of the paper}
+   \subject{Abstract}
+   \section{Introduction}
+   \section{Methods}
+   \section{Results}
+   \section{Discussion}
+   \section{Conclusions}
+   
+   \stoptext
+ \stoptyping
+
+ We can see in the pdf the number is assigned automatically to each
+ numbered section. Now we can fill our paper with the sample text.
+
+ 
+ \starttyping
+   \starttext
+   
+   \chapter{Title of the paper}
+       \subject{Abstract}
+           \input ward
+       \section{Introduction}
+           \input davis
+       \section{Methods}
+           \input knuth
+       \section{Results}
+           \input klein
+       \section{Discussion}
+           \input carey
+       \section{Conclusions}
+           \input lindey
+   
+   \stoptext
+ \stoptyping
+
+ For code readability we can use tabs to indicate that such section is inside
+ other section. These tabs are only for orgnizing the source code and have not
+ influence on the pdf.
+
+ \subject{Font sizes and styles}
+
+ The font size and style commans must to be used inside curly brackets. The
+ commands are showed in Tables \in[tab:t2] and \in[tab:t3].
+
+
+ \placetable[]
+            [tab:t2]
+ {Commands to modify the font size}
+{ \bTABLE[frame=off, width=5cm]
+
+ \bTR\bTD {\bf Command} \eTD  \bTD {\bf effect} \eTD\eTR
+\bTR\bTD \type{{\tfa texto}} \eTD  \bTD {\tfa texto} \eTD\eTR
+\bTR\bTD \type{{\tfb texto}} \eTD  \bTD {\tfb texto} \eTD\eTR
+\bTR\bTD \type{{\tfc texto}} \eTD  \bTD {\tfc texto} \eTD\eTR
+\bTR\bTD \type{{\tfd texto}} \eTD  \bTD {\tfd texto} \eTD\eTR
+
+\eTABLE
+}
+
+
+\placetable[]
+           [tab:t3]
+           {Commands to modify the font style}
+           {
+\bTABLE[frame=off, width=5cm]
+
+%\bTR\bTD {\bfc Comando} \eTD \bTD {\bfc Resultado} \eTD \bTD {\bfc Estilo} \eTD  
+%\eTR
+\bTR\bTD  \eTD  \eTR
+
+\bTR\bTD \type{{\bf texto}} \eTD \bTD {\tfc \bf texto} \eTD \bTD
+         {\tfb Bold face} \eTD \eTR
+\bTR\bTD \type{{\it texto}} \eTD \bTD {\tfc \it texto} \eTD \bTD
+         {\tfb Italic} \eTD \eTR
+ \bTR\bTD \type{{\sl texto}} \eTD \bTD {\tfc \sl texto} \eTD \bTD
+          {\tfb Slanted} \eTD \eTR
+ \bTR\bTD \type{{\sc texto}} \eTD \bTD {\tfc \sc texto} \eTD \bTD
+          {\tfb Smallcaps} \eTD \eTR
+\bTR\bTD[width=5cm] \type{{\overstrike texto}} \eTD \bTD {\bfc \overstrike texto} \eTD \bTD
+                  {\tfb Overstrike} \eTD \eTR
+\bTR\bTD \type{{\ss texto}} \eTD \bTD {\tfc \ss texto} \eTD \bTD
+         {\tfb Sans serif} \eTD \eTR
+\bTR\bTD \type{{\roman texto}} \eTD \bTD {\tfc \roman texto} \eTD \bTD
+         {\tfb Roman} \eTD \eTR
+ \eTABLE
+           }
+
+
+\page
+
+           \starttyping
+   \starttext
+   
+   This is a {\tfb Big word} and this a {\bf bold face} style, and the
+   italic {\it style}
+   
+   \stoptext
+ \stoptyping
+
+
+ \subject{Lists}
+
+ The command for creating a list is:
+
+ \starttyping
+   \startitemize
+     ...
+   \stopitemize
+ \stoptyping
+
+ In between we use the command \type{\item} following the text of the list, every
+ \type{\item} represents one element of the list. The elements can be a simple
+ word, line, paragraph or image, see the example.
+
+ \starttyping
+   \starttext
+
+   \startitemize
+       \item The first element of the list
+       \item The second element of the list
+       \item The third element of the list
+       \item \cdots
+   \stopitemize
+   
+   \stoptext
+ \stoptyping
+
+
+ Now let's use the options for this command. The options must be written
+ in brackets at the end of \type{\start...}. In the following example, we
+ tell to \CONTEXT~to put numbers instead of bullets in the list, in
+ addition, the option {\it packed} reduce the space between lines.
+
+  \starttyping
+   \starttext
+
+   \startitemize[n, packed]
+       \item The first element of the list
+       \item The second element of the list
+       \item The third element of the list
+       \item \cdots
+   \stopitemize
+       
+   \stoptext
+   \stoptyping
+
+   Check the following examples and analyze the options.
+
+
+   \starttyping
+   \starttext
+
+   \startitemize[n, packed]
+       \item The first element of the list
+       \item The second element of the list
+       \item The third element of the list
+       \item \cdots
+   \stopitemize
+
+   \input knuth
+
+    \startitemize[n, packed, continue]
+       \item The fourth element of the list
+       \item The fifth element of the list
+       \item The sexth element of the list
+       \item \cdots
+   \stopitemize
+     
+   \stoptext
+   \stoptyping
+
+
+If there are to many elements to list, we can divide into columns as follow.
+
+  \starttyping
+   \starttext
+
+   \startitemize[n, packed, columns, three]
+       \item The first element of the list
+       \item The second element of the list
+       \item The third element of the list
+       \item \cdots
+       \item The fourth element of the list
+       \item The fifth element of the list
+       \item The sexth element of the list
+       \item \cdots
+   \stopitemize
+     
+   \stoptext
+   \stoptyping
+
+ There are several symbols that can be use in a list. You can change
+ the \type{[n]} (numeration) for any of the following alternatives:
+ \type{a, A, r, R, 1, 2, 3}. Try and see the result.
+
+
+ \subject{Sub/superscript}
+
+ The command \type{\low{}} and \type{\high{}} are use text as sub or
+ superscript form. See the examples.
+
+ \starttyping
+ \starttext
+
+The H\low{2}O is the water formula. The area is 80 m\high{2}.
+ 
+ \stoptext
+ \stoptyping
+
+ \subject{Equations}
+
+ Inline math symbols are written between two \$ \$. \CONTEXT~will print the
+ math symbols with an adequate font.
+
+
+  \starttyping
+ \starttext
+
+Resolve the following equation $y = a + b - c$
+ 
+ \stoptext
+ \stoptyping
+
+If we need isolate the equation in the document, we will use the
+\type{\startformula...\stopformula} commands. This will print the
+equation in an new line and centered.
+
+ \starttyping
+ \starttext
+
+ Resolve the following equation
+
+   \startformula
+     y = a + b - c
+   \stopformula
+ 
+ \stoptext
+ \stoptyping
+
+ Note when we use the \type{\start...\stop} form, there is not needed
+ the \$ symbol.
+
+
+ \subject{Figures}
+
+ To insert a figure we will use the command \type{\externalfigure
+   [][width=]}.  In the first pair of brackets you will write the name
+ of the image without extension. If the image is in the same folder
+ there is not needed write the entire path. 
+\stoptext
