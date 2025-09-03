@@ -103,12 +103,12 @@
 
 \blank[2cm]
 
-\section{What is ConTeXt?}
+\section{What is \CONTEXT?}
 
 \CONTEXT~is a typesetting system developed in 1992 by Hans Hagen from PRAGMA-ADE
 in Hasselt, The Netherlands. Is an advanced macro package for creating
 professional quality documents in pdf, html and, xml formats. The traditional
-word processors such as Writer, Abword, or MS word, may be limited with large and
+word processors such as Writer, AbiWord, or MS word, may be limited with large and
 complex documents and when we need to type many text, mathematical and chemical
 formulas, insert figures and create complex tables. \CONTEXT~ is a professional
 typesetting software with many commands that will help you make your papers look
@@ -128,7 +128,7 @@ extension. An useful habit is to create an independent directory for
 each document; into this directory or folder the {\tt .tex} file have
 to be saved. To avoid potential conflicts the name of the file must not
 contain spaces or special characters such as \#, \&,
-etc. Underscore can be used to separate words in the file names (e.g. {\tt soil_paper.tex}).
+etc (e.g. {\tt main.tex}). Underscore can be used to separate words in the file names.
 
 
 
@@ -138,13 +138,13 @@ etc. Underscore can be used to separate words in the file names (e.g. {\tt soil_
   \startFLOWcell
     \name {file}
     \location {1,1}
-    \text {soil_paper.tex}
+    \text {main.tex}
     \connection [rl] {ctx}
   \stopFLOWcell
    \startFLOWcell
     \name {ctx}
     \location {2,1}
-    \text {ConTeXt}
+    \text {context main.tex}
     \connection [rl] {pdf}
     \comment[t]{Compile}
   \stopFLOWcell
@@ -161,7 +161,7 @@ etc. Underscore can be used to separate words in the file names (e.g. {\tt soil_
 \FLOWchart[c1]
 
 \CONTEXT~works with commands which are words preceded by a backslash
-(\backslash) The {\tt soil_paper.tex} is the file where the commands
+(\backslash) The {\tt main.tex} is the file where the commands
 will be written and you can use any text editor. However the
 TeXworks editor is recommended for beginners and can be downloaded from
 the official page
@@ -169,10 +169,10 @@ the official page
 
 \section{Try online}
 
-Before install \CONTEXT~and TexWorks and use it in you own computer,
+Before install \CONTEXT~and TeXworks and use it in you own computer,
 you can follow this guide in the online version in a web browser. Copy
 the following link and paste it in your web browser,
-\goto{https://live.contextgarden.net}[url(https://live.contextgarden.net)]. In
+\goto{https://context-on-web.eu/}[url(https://context-on-web.eu/)]. In
 \in{Fig.}[fig:f1] the online version is showed. You can click the
 typeset button and the pdf will be created with Hello World! text.
 
@@ -180,7 +180,7 @@ typeset button and the pdf will be created with Hello World! text.
 
 \placefigure[]
             [fig:f1] {\CONTEXT~online version.}
-            {\externalfigure [onlinec][width=\textwidth]}
+            {\externalfigure [coweb][width=\textwidth]}
 
 
 
@@ -523,7 +523,7 @@ Use the command \type{\item} following the text of the list to create a item, ev
    \stoptyping
 
 
-If there are to many elements to list, we can divide into columns as follow.
+If there are too many elements to list, we can divide into columns as follow.
 
   \starttyping
    \starttext
@@ -535,7 +535,7 @@ If there are to many elements to list, we can divide into columns as follow.
        \item \cdots
        \item The fourth element of the list
        \item The fifth element of the list
-       \item The sexth element of the list
+       \item The sixth element of the list
        \item \cdots
    \stopitemize
      
@@ -602,7 +602,7 @@ equation in an new line and centered.
  there is not needed write the entire path.
 
  
- ConTeXt supports the image formats listed below. The image format is determined from the file extension (case insensitive).
+ \CONTEXT supports the image formats listed below. The image format is determined from the file extension (case insensitive).
  
 \startitemize[packed]
 
@@ -629,22 +629,22 @@ can use captions and labels. See carefully the brackets types.
 \starttyping
   \starttext
 
-  This is an figure with captions and label.
+  This is a figure with captions and label.
 
   \placefigure[]
               [fig:f1]
               {This is the caption space. A cow}
               {\externalfigure [cow][width=9cm]}
 
- More text can be write here.
+ More text can be written here.
 
  Cross-references are used with the label \in{Fig.}[fig:f1]
               
   \stoptext
 \stoptyping
 
-In the previous example, the first pair of square brackets is for location, let
-it empty to led \CONTEXT~put it automatically. The second square brackets is for
+In the previous example, the first pair of square brackets is for
+location, leave it empty to let \CONTEXT place it. The second square brackets is for
 label, this label will be use latter for cross-reference. The first pair of
 curly brackets is for captions, and the second one is for the command.
 
